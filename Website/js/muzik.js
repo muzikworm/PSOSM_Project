@@ -89,10 +89,9 @@
   var beta;
   console.log(temp);
     $.ajax({
-      type: "POST",
+      method: "POST",
       url: "http://13.58.87.15:8000/getUser",
-      dataType: 'json',
-      data: temp,
+      data: JSON.stringify(temp),
       success: function(response) {
         console.log("success");
         console.log(response);
