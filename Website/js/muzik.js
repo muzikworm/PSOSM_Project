@@ -96,12 +96,9 @@
        withCredentials: true
       },
       
-      success: function(response) {
-        console.log('Success!', response);
-      },
-    error: function(e) {
-        console.log('Error!', "Chud gayi teri");
     }
+    }).done(function(result){
+      console.log();
     });
       return response;
  }
