@@ -84,22 +84,22 @@
  function callpy(username)
  {
   var temp = {
-    'username' : username
+    'username' : 'muzikworm'
   }
-  console.log("callpy mein hun");
+  var beta;
+  console.log(temp);
     $.ajax({
       type: "POST",
       url: "http://13.58.87.15:8000/getUser",
       dataType: 'json',
-      data: JSON.stringify(temp),
-      xhrFields: {
-       withCredentials: true
-      },
+      data: temp,
       success: function(response) {
+        console.log("success");
         console.log(response);
-    },
-    error: function(err) {
+        },
+      error: function(err) {
+        console.log("failed");
         console.log(err);
-    }
+      }
     });
     }
