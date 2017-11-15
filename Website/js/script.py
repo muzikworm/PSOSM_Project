@@ -32,7 +32,7 @@ def get_followers(f) :
 @cross_origin(supports_credentials=True)
 def get_user(): 
     dat = request.get_json()     
-    print("abe hatt bc" + type(dat))
+    print(type(dat))
     user = {}
     user['username'] = request.json['username']
     username = user['username']
