@@ -89,17 +89,17 @@
       type: "POST",
       url: "http://13.58.87.15:8000/getUser",
       dataType: 'json',
-      data: username,
+      data: {'username':username},
       xhrFields: {
        withCredentials: true
       },
       
-      success: function(data) {
+      success: function(response) {
         console.log('Success!', response);
       },
     error: function(e) {
         console.log('Error!', "Chud gayi teri");
     }
     });
-      return beta;
+      return response;
  }
