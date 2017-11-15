@@ -4,7 +4,6 @@ from flask import jsonify
 
 import requests
 import json
-import pymongo
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
@@ -29,10 +28,10 @@ def get_followers(f) :
         return int(f)
 
 
-@app.route('/getUser')
+@app.route('/getUser',methods = ['POST'])
 @cross_origin(supports_credentials=True)
 def get_user():
-	username = request.get_data()
+    username = request.json['username']
     link = "https://www.instagram.com/" + username
     req = requests.get(link).text
     soup = BeautifulSoup(req, "html.parser")
