@@ -88,9 +88,8 @@
   console.log("callpy mein hun");
     $.ajax({
       type: "GET",
-      url: "http://127.0.0.1:5000/test.py",
-      data: {},
-      dataType: 'json',
+      url: "http://13.58.87.15:8000/test",
+      data: beta = data,
       xhrFields: {
        withCredentials: true
       },
@@ -99,5 +98,5 @@
       }).done(function( o ) {
         alert("OK");
     });
-
+      return beta;
  }
