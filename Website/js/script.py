@@ -31,7 +31,7 @@ def get_followers(f) :
 @app.route('/getUser',methods = ['POST'])
 @cross_origin(supports_credentials=True)
 def get_user(): 
-	dat = request.get_json()     
+    dat = request.get_json()     
     print("abe hatt bc" + type(dat))
     user = {}
     user['username'] = request.json['username']
