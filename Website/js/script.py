@@ -31,9 +31,9 @@ def get_followers(f) :
 @app.route('/getUser',methods = ['POST'])
 @cross_origin(supports_credentials=True)
 def get_user():
-	print(request)
-	user = {}
-	user['username'] = request.json['username']
+	print(request.get_json())
+    user = {}
+    user['username'] = request.json['username']
     username = user['username']
     link = "https://www.instagram.com/" + username
     req = requests.get(link).text
@@ -97,7 +97,7 @@ def get_user():
     obj['like_rate'] = like_rate
   
     
-    return jsonify(obj);
+    return jsonify(status="success",data=obj);
 
 if __name__ == "__main__":
     # here is starting of the development HTTP server
