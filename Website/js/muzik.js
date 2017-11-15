@@ -84,19 +84,22 @@
  function callpy(username)
  {
 
-  beta = data
   console.log("callpy mein hun");
     $.ajax({
-      type: "GET",
-      url: "http://13.58.87.15:8000/test",
-      data: beta = data,
+      type: "POST",
+      url: "http://13.58.87.15:8000/getUser",
+      dataType: 'json',
+      data: username,
       xhrFields: {
        withCredentials: true
       },
-      crossDomain: true,
-      contentType: 'application/json; charset=utf-8'
-      }).done(function( o ) {
-        alert("OK");
+      
+      success: function(data) {
+        console.log('Success!', response);
+      },
+    error: function(e) {
+        console.log('Error!', "Chud gayi teri");
+    }
     });
       return beta;
  }
