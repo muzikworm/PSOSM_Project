@@ -83,13 +83,15 @@
 
  function callpy(username)
  {
-
+  var temp = {
+    'username' : username
+  }
   console.log("callpy mein hun");
     $.ajax({
       type: "POST",
       url: "http://13.58.87.15:8000/getUser",
       dataType: 'json',
-      data: {'username':username},
+      data: JSON.stringify(temp),
       xhrFields: {
        withCredentials: true
       },
